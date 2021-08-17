@@ -11,7 +11,7 @@ export const Title: React.FC<{
 	return (
 		<div
 			style={{
-				fontFamily: 'Open Sans',
+				fontFamily: 'Arial',
 				fontWeight: 'bold',
 				textAlign: 'center',
 				position: 'absolute',

@@ -21,7 +21,7 @@ export const Caption: React.FC<{
 	return (
 		<h1
 			style={{
-				fontFamily: 'Open Sans',
+				fontFamily: 'Arial',
 				fontWeight: 'bold',
 				fontSize: '100px',
 				color: "black",

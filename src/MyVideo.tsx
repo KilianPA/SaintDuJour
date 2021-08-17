@@ -88,7 +88,7 @@ export const MyVideo = () => {
 				<Text fontSize={80} text={"Aujourd'hui c'est la " + suffix.toLowerCase()} top={650} />
 			</Sequence>
 			<Sequence from={120} durationInFrames={Infinity}>
-				<Caption name={name} top={1050} />
+				<Caption name={name} top={1000} />
 			</Sequence>
 			<Sequence from={110} durationInFrames={Infinity}>
 				<Confetti top={1100}/>

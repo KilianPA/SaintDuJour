@@ -14,7 +14,7 @@ export const Text: React.FC<{
 	return (
 		<h1
 			style={{
-				fontFamily: 'Open Sans',
+				fontFamily: 'Arial',
 				fontWeight: 'bolder',
 				fontSize: fontSize,
 				color: "black",

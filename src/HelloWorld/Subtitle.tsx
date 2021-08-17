@@ -7,7 +7,7 @@ export const Subtitle: React.FC = () => {
 	return (
 		<div
 			style={{
-				fontFamily: 'Open Sans',
+				fontFamily: 'Arial',
 				fontSize: 40,
 				textAlign: 'center',
 				position: 'absolute',

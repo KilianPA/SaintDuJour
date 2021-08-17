@@ -24,6 +24,7 @@
 		"express": "^4.17.1",
 		"fetch": "^1.1.0",
 		"moment": "^2.29.1",
+		"path": "^0.12.7",
 		"prettier": "^2.2.1",
 		"prettier-plugin-organize-imports": "^1.1.1",
 		"react": "^17.0.2",

@@ -29,7 +29,7 @@ function createVideo () {
 }
 
 function uploadVideo () {
-    exec('sudo node ../tiktokUpload/index.js', (error, stdout, stderr) => {
+    exec('node ../tiktokUpload/index.js', (error, stdout, stderr) => {
         if (error) {
             console.log(`error: ${error.message}`);
             return;

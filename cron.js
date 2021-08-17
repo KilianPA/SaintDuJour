@@ -12,6 +12,10 @@ cronJob();
 
 function cronJob () {
     console.log('Run job');
+    createVideo()
+}
+
+function createVideo () {
     exec('sudo npm run build', (error, stdout, stderr) => {
         if (error) {
             console.log(`error: ${error.message}`);
@@ -19,18 +23,21 @@ function cronJob () {
         }
         console.log('video out')
         sleep.sleep(5)
-        exec('sudo node ../tiktokUpload/index.js', (error, stdout, stderr) => {
-            if (error) {
-                console.log(`error: ${error.message}`);
-                return;
-            }
-            if (stderr) {
-                console.log('Vidéo uploadée');
-                return;
-            }
-            console.log(`stdout: ${stdout}`);
-        });
+        uploadVideo()
         return;
     });
+}
 
+function uploadVideo () {
+    exec('sudo node ../tiktokUpload/index.js', (error, stdout, stderr) => {
+        if (error) {
+            console.log(`error: ${error.message}`);
+            return;
+        }
+        if (stderr) {
+            console.log('Vidéo uploadée');
+            return;
+        }
+        console.log(`stdout: ${stdout}`);
+    });
 }

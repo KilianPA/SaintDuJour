@@ -2,10 +2,10 @@ const { exec } = require("child_process");
 var sleep = require('sleep');
 var CronJob = require('cron').CronJob;
 var path = require('path')
-var job = new CronJob('*/5 * * * * *', function() {
-
-}, null, true, 'Europe/Paris');
-job.start();
+// var job = new CronJob('*/5 * * * * *', function() {
+//     uploadVideo()
+// }, null, true, 'Europe/Paris');
+// job.start();
 
 cronJob();
 
@@ -15,16 +15,11 @@ function cronJob () {
 }
 
 function createVideo () {
-    exec('npm run build', (error, stdout, stderr) => {
-        if (error) {
-            console.log(`error: ${error.message}`);
-            return;
-        }
-        console.log('video out')
-        sleep.sleep(5)
+    var videoProcess = exec('npm run build')
+    videoProcess.stdout.pipe(process.stdout);
+    videoProcess.on('exit', () =>  {
         uploadVideo()
-        return;
-    });
+    })
 }
 
 function uploadVideo () {

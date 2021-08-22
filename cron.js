@@ -11,6 +11,7 @@ console.log('Service Running')
 
 function cronJob () {
     console.log('Run job');
+    removeVideo()
     createVideo()
     //uploadVideo()
 }
@@ -34,7 +35,6 @@ function uploadVideo () {
             return;
         }
         console.log(`stdout: ${stdout}`);
-        removeVideo()
     });
 }
 

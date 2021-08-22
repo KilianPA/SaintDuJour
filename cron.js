@@ -2,16 +2,17 @@ const { exec } = require("child_process");
 var sleep = require('sleep');
 var CronJob = require('cron').CronJob;
 var path = require('path')
-// var job = new CronJob('*/5 * * * * *', function() {
-//     uploadVideo()
-// }, null, true, 'Europe/Paris');
-// job.start();
+var job = new CronJob('0 0 7 * * *', function() {
+    cronJob()
+}, null, true, 'Europe/Paris');
+job.start();
 
-cronJob();
+console.log('Service Running')
 
 function cronJob () {
     console.log('Run job');
     createVideo()
+    //uploadVideo()
 }
 
 function createVideo () {
@@ -33,5 +34,10 @@ function uploadVideo () {
             return;
         }
         console.log(`stdout: ${stdout}`);
+        removeVideo()
     });
+}
+
+function removeVideo () {
+    exec('sudo rm ../tiktokUpload/out.mp4')
 }

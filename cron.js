@@ -1,13 +1,14 @@
 const { exec } = require("child_process");
 var sleep = require('sleep');
 var CronJob = require('cron').CronJob;
-var path = require('path')
+var fs = require('fs')
 var job = new CronJob('0 0 7 * * *', function() {
     cronJob()
 }, null, true, 'Europe/Paris');
 job.start();
 
 console.log('Service Running')
+// cronJob()
 
 function cronJob () {
     console.log('Run job');
@@ -20,8 +21,15 @@ function createVideo () {
     var videoProcess = exec('npm run build')
     videoProcess.stdout.pipe(process.stdout);
     videoProcess.on('exit', () =>  {
-        uploadVideo()
+        try {
+            if (fs.existsSync(path.resolve("../tiktokUpload/out.mp4"))) {
+                uploadVideo()
+            }
+        } catch (error) {
+            process.exit()
+        }
     })
+
 }
 
 function uploadVideo () {

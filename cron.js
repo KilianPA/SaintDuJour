@@ -2,13 +2,14 @@ const { exec } = require("child_process");
 var sleep = require('sleep');
 var CronJob = require('cron').CronJob;
 var fs = require('fs')
-var job = new CronJob('0 0 7 * * *', function() {
+var path = require('path')
+var job = new CronJob('0 20 9 * * *', function() {
     cronJob()
 }, null, true, 'Europe/Paris');
 job.start();
 
 console.log('Service Running')
-// cronJob()
+//cronJob()
 
 function cronJob () {
     console.log('Run job');
@@ -26,6 +27,7 @@ function createVideo () {
                 uploadVideo()
             }
         } catch (error) {
+            console.log(error);
             process.exit()
         }
     })

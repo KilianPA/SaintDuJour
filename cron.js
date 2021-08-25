@@ -3,13 +3,18 @@ var sleep = require('sleep');
 var CronJob = require('cron').CronJob;
 var fs = require('fs')
 var path = require('path')
-var job = new CronJob('0 20 9 * * *', function() {
-    cronJob()
-}, null, true, 'Europe/Paris');
-job.start();
+
 
 console.log('Service Running')
-//cronJob()
+var myArgs = process.argv.slice(2);
+if (myArgs.includes('--launch')) {
+    cronJob()
+} else {
+    var job = new CronJob('0 0 7 * * *', function() {
+        cronJob()
+    }, null, true, 'Europe/Paris');
+    job.start();
+}
 
 function cronJob () {
     console.log('Run job');
@@ -27,8 +32,7 @@ function createVideo () {
                 uploadVideo()
             }
         } catch (error) {
-            console.log(error);
-            process.exit()
+            createVideo()
         }
     })
 

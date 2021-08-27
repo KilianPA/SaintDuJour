@@ -31,10 +31,11 @@ export const Title: React.FC<{
 						key={t}
 						style={{
 							color: 'white',
-							fontSize: 100,
+							fontSize: '90px',
 							textTransform: 'capitalize',
 							marginLeft: 20,
 							marginRight: 20,
+							whiteSpace: 'nowrap',
 							textAlign: 'center',
 							transform: `scale(${spring({
 								fps: videoConfig.fps,

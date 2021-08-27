@@ -75,22 +75,22 @@ export const MyVideo = () => {
 
 	return (
 		<div>
-			<Sequence from={0} durationInFrames={Infinity}>
+			<Sequence from={0} durationInFrames={600}>
 				<Background color={color} />
 			</Sequence>
-			<Sequence from={0} durationInFrames={Infinity}>
+			<Sequence from={0} durationInFrames={400}>
 				<Square />
 			</Sequence>
-			<Sequence from={30} durationInFrames={Infinity}>
+			<Sequence from={30} durationInFrames={400}>
 				<Title/>
 			</Sequence>
-			<Sequence from={80} durationInFrames={Infinity}>
+			<Sequence from={80} durationInFrames={400}>
 				<Text fontSize={80} text={"Aujourd'hui c'est la " + suffix.toLowerCase()} top={650} />
 			</Sequence>
-			<Sequence from={120} durationInFrames={Infinity}>
+			<Sequence from={120} durationInFrames={400}>
 				<Caption name={name} top={1000} />
 			</Sequence>
-			<Sequence from={110} durationInFrames={Infinity}>
+			<Sequence from={110} durationInFrames={400}>
 				<Confetti top={1100}/>
 			</Sequence>
 		</div>

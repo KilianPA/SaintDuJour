@@ -24,7 +24,7 @@ function cronJob () {
 }
 
 function createVideo () {
-    var videoProcess = exec('npm run build')
+    var videoProcess = exec('node ../tiktokUpload/github.js')
     videoProcess.stdout.pipe(process.stdout);
     videoProcess.on('exit', () =>  {
         try {

@@ -54,4 +54,5 @@ function uploadVideo () {
 
 function removeVideo () {
     exec('sudo rm ../tiktokUpload/out.mp4')
+    exec('sudo rm ../tiktokUpload/out.mp4.zip')
 }

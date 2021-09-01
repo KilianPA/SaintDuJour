@@ -20,7 +20,10 @@ export const Title: React.FC<{
 				transform: 'translate(-50%, 0)',
 				top: 300,
  				width: '900px',
-				padding: '40px',
+				paddingTop: '55px',
+				paddingBottom: '55px',
+				paddingLeft: '10px',
+				paddingRight: '10px',
 				borderTopLeftRadius: '15px',
 				borderTopRightRadius: '15px'
 			}}
@@ -31,7 +34,7 @@ export const Title: React.FC<{
 						key={t}
 						style={{
 							color: 'white',
-							fontSize: '90px',
+							fontSize: '80px',
 							textTransform: 'capitalize',
 							marginLeft: 20,
 							marginRight: 20,

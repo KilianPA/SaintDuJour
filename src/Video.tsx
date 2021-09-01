@@ -6,7 +6,7 @@ import {MyVideo} from "./MyVideo";
 import {Square} from "./HelloWorld/Square";
 
 export const RemotionVideo: React.FC = () => {
-	var fps = 60
+	var fps = 30
 	var width = 1080
 	var height = 1930
 	return (
@@ -14,7 +14,7 @@ export const RemotionVideo: React.FC = () => {
 			<Composition
 				id="MyVideo"
 				component={MyVideo}
-				durationInFrames={600}
+				durationInFrames={400}
 				fps={fps}
 				width={width}
 				height={height}

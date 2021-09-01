@@ -75,7 +75,7 @@ export const MyVideo = () => {
 
 	return (
 		<div>
-			<Sequence from={0} durationInFrames={600}>
+			<Sequence from={0} durationInFrames={400}>
 				<Background color={color} />
 			</Sequence>
 			<Sequence from={0} durationInFrames={400}>

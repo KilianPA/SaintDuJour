@@ -27,7 +27,7 @@ function createVideo () {
     videoProcess.stdout.pipe(process.stdout);
     videoProcess.on('exit', () =>  {
         try {
-            console.log()
+            console.log(fs.existsSync(path.resolve("../tiktokUpload/out.mp4")))
             if (fs.existsSync(path.resolve("../tiktokUpload/out.mp4"))) {
                 uploadVideo()
             }

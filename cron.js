@@ -27,6 +27,7 @@ function createVideo () {
     videoProcess.stdout.pipe(process.stdout);
     videoProcess.on('exit', () =>  {
         try {
+            console.log()
             if (fs.existsSync(path.resolve("../tiktokUpload/out.mp4"))) {
                 uploadVideo()
             }
@@ -53,7 +54,7 @@ function uploadVideo () {
 
 function removeVideo () {
     exec('sudo rm ../tiktokUpload/out.mp4')
-    exec('sudo rm ../tiktokUpload/out.mp4.zip')
+    exec('sudo rm ./out.mp4.zip')
     createVideo()
 }
 

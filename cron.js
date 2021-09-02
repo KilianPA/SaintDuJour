@@ -17,9 +17,8 @@ if (myArgs.includes('--launch')) {
 }
 
 function cronJob () {
-    console.log('Run job');
+    console.log('Run job ' + logTime());
     removeVideo()
-    createVideo()
     //uploadVideo()
 }
 
@@ -45,7 +44,7 @@ function uploadVideo () {
             return;
         }
         if (stderr) {
-            console.log('Vidéo uploadée');
+            console.log('Vidéo uploadée' + logTime());
             return;
         }
         console.log(`stdout: ${stdout}`);
@@ -55,4 +54,16 @@ function uploadVideo () {
 function removeVideo () {
     exec('sudo rm ../tiktokUpload/out.mp4')
     exec('sudo rm ../tiktokUpload/out.mp4.zip')
+    createVideo()
+}
+
+
+function logTime () {
+    var currentdate = new Date();
+    return " | " + currentdate.getDate() + "/"
+        + (currentdate.getMonth()+1)  + "/"
+        + currentdate.getFullYear() + " "
+        + currentdate.getHours() + ":"
+        + currentdate.getMinutes() + ":"
+        + currentdate.getSeconds();
 }
